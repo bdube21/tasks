@@ -1,6 +1,10 @@
 import React from "react";
 import "./App.css";
 import everest from "./assets/Ev.jpg";
+import { Button } from "react-bootstrap";
+import { Container } from "react-bootstrap";
+import { Row } from "react-bootstrap";
+import { Col } from "react-bootstrap";
 
 function App(): React.JSX.Element {
     return (
@@ -21,6 +25,34 @@ function App(): React.JSX.Element {
                 <li>Walks in the city forest</li>
                 <li>Naps in bed</li>
             </ul>
+            <Button
+                onClick={() => {
+                    console.log("Hello World!");
+                }}
+            >
+                Log Hello World
+            </Button>
+
+            <div
+                style={{
+                    width: "400px",
+                    height: "30px",
+                    backgroundColor: "red",
+                    margin: "auto",
+                    color: "white",
+                }}
+            >
+                <Container>
+                    <Row>
+                        <Col>
+                            <b>First column.</b>
+                        </Col>
+                        <Col>
+                            <b>Second column.</b>
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
         </div>
     );
 }
