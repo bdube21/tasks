@@ -16,7 +16,7 @@ function App(): React.JSX.Element {
             <p>
                 Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload.
-                <br /> Brady Dube
+                <br /> Josh VanSantvoord
                 <br /> Hello World
             </p>
             <img src={everest} alt="Her majesty, Everest" />
