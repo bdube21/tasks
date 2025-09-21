@@ -112,5 +112,25 @@ export function makeMath(addends: number[]): string {
  * And the array [1, 9, 7] would become [1, 9, 7, 17]
  */
 export function injectPositive(values: number[]): number[] {
-    return [];
+    /*  Get index of first negative number
+        If no negative number found, set index to end of array.
+    */
+    let idx = values.findIndex((num: number): boolean => num < 0);
+    if (idx === -1) idx = values.length;
+
+    /*  Sum numbers up to the index of the first negative
+        number. 
+    */
+    const sum = values.reduce(
+        (current: number, num: number, nindex: number) => {
+            if (nindex < idx) return current + num;
+            else return current;
+        },
+        0,
+    );
+
+    const vals: number[] = [...values];
+    vals.splice(idx + 1, 0, sum);
+
+    return vals;
 }
