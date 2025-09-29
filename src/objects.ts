@@ -9,18 +9,18 @@ import { Question, QuestionType } from "./interfaces/question";
 export function makeBlankQuestion(
     id: number,
     name: string,
-    type: QuestionType
+    type: QuestionType,
 ): Question {
     return {
-		id: id,
-		name: name,
-		type: type,
-		body: "",
-		expected: "",
-		options: [],
-		points: 1,
-		published: false
-	};
+        id: id,
+        name: name,
+        type: type,
+        body: "",
+        expected: "",
+        options: [],
+        points: 1,
+        published: false,
+    };
 }
 
 /**
@@ -31,8 +31,8 @@ export function makeBlankQuestion(
  * HINT: Look up the `trim` and `toLowerCase` functions.
  */
 export function isCorrect(question: Question, answer: string): boolean {
-    const parsedAnswer: string = answer.trim().toLowerCase()
-	return (parsedAnswer === question.expected.trim().toLowerCase());
+    const parsedAnswer: string = answer.trim().toLowerCase();
+    return parsedAnswer === question.expected.trim().toLowerCase();
 }
 
 /**
@@ -43,7 +43,7 @@ export function isCorrect(question: Question, answer: string): boolean {
  */
 export function isValid(question: Question, answer: string): boolean {
     if (question.type === "short_answer_question") return true;
-	return question.options.includes(answer);
+    return question.options.includes(answer);
 }
 
 /**
@@ -74,16 +74,16 @@ export function toShortForm(question: Question): string {
  * Check the unit tests for more examples of what this looks like!
  */
 export function toMarkdown(question: Question): string {
-	/* Line 1: hash sign and name */
-	let markdown_str: string = "# " + question.name + "\n";
+    /* Line 1: hash sign and name */
+    let markdown_str: string = "# " + question.name + "\n";
 
-	/* Line 2: body */
-	markdown_str += question.body;
+    /* Line 2: body */
+    markdown_str += question.body;
 
-	/* Multiple choice options */
-	if (question.type === "multiple_choice_question") {
-		markdown_str += "\n- " + question.options.join("\n- ");
-	}
+    /* Multiple choice options */
+    if (question.type === "multiple_choice_question") {
+        markdown_str += "\n- " + question.options.join("\n- ");
+    }
     return markdown_str;
 }
 
@@ -92,7 +92,13 @@ export function toMarkdown(question: Question): string {
  * `newName`.
  */
 export function renameQuestion(question: Question, newName: string): Question {
-    return question;
+    const newQ = {
+        ...question,
+        options: [...question.options],
+        name: newName,
+    };
+
+    return newQ;
 }
 
 /**
@@ -137,7 +143,7 @@ export function mergeQuestion(
     id: number,
     name: string,
     contentQuestion: Question,
-    { points }: { points: number }
+    { points }: { points: number },
 ): Question {
     return contentQuestion;
 }
