@@ -1,3 +1,4 @@
+import { parse } from "path";
 import { Question, QuestionType } from "./interfaces/question";
 
 /**
@@ -30,7 +31,8 @@ export function makeBlankQuestion(
  * HINT: Look up the `trim` and `toLowerCase` functions.
  */
 export function isCorrect(question: Question, answer: string): boolean {
-    return false;
+    const parsedAnswer: string = answer.trim().toLowerCase()
+	return (parsedAnswer === question.expected.trim().toLowerCase());
 }
 
 /**
