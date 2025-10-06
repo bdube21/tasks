@@ -120,8 +120,6 @@ export function addNewQuestion(
         }),
     );
     questionsCopy.push(newQ);
-    console.log("~~~~~~~HELLLO!!!!!~~~~~~~~~~");
-    console.log(questionsCopy);
     return questionsCopy;
 }
 
@@ -137,7 +135,19 @@ export function renameQuestionById(
     targetId: number,
     newName: string,
 ): Question[] {
-    return [];
+    const questionsCopy = questions.map(
+        (question: Question): Question => ({
+            /* Copy the primitives */
+            ...question,
+            /* Shallow copy the options */
+            options: [...question.options],
+        }),
+    );
+    const tarQ = questionsCopy.find(
+        (question: Question): boolean => question.id === targetId,
+    );
+    if (tarQ !== undefined) tarQ.name = newName;
+    return questionsCopy;
 }
 
 /**
