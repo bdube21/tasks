@@ -168,5 +168,23 @@ export function editOption(
     targetOptionIndex: number,
     newOption: string,
 ): Question[] {
-    return [];
+    const questionsCopy = questions.map(
+        (question: Question): Question => ({
+            /* Copy the primitives */
+            ...question,
+            /* Shallow copy the options */
+            options: [...question.options],
+        }),
+    );
+    const tarQ = questionsCopy.find(
+        (question: Question): boolean => question.id === targetId,
+    );
+    if (tarQ !== undefined) {
+        if (targetOptionIndex === -1) {
+            tarQ.options.push(newOption);
+        } else {
+            tarQ.options[targetOptionIndex] = newOption;
+        }
+    }
+    return questionsCopy;
 }
