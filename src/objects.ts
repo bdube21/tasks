@@ -1,4 +1,3 @@
-import { parse } from "path";
 import { Question, QuestionType } from "./interfaces/question";
 
 /**
