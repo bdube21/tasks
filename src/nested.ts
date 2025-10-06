@@ -47,7 +47,10 @@ export function findQuestion(
  * Hint: use filter
  */
 export function removeQuestion(questions: Question[], id: number): Question[] {
-    return [];
+    /* Filter by ids that are not the one to remove */
+    return questions.filter(
+        (question: Question): Boolean => question.id !== id,
+    );
 }
 
 /***
