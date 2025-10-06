@@ -85,7 +85,16 @@ export function makeAnswers(questions: Question[]): Answer[] {
  * Hint: as usual, do not modify the input questions array
  */
 export function publishAll(questions: Question[]): Question[] {
-    return [];
+    const questionsCopy = questions.map(
+        (question: Question): Question => ({
+            /* Copy the primitives */
+            ...question,
+            /* Shallow copy the options */
+            options: [...question.options],
+            published: true,
+        }),
+    );
+    return questionsCopy;
 }
 
 /***
