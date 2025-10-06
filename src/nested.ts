@@ -1,5 +1,6 @@
 import { Answer } from "./interfaces/answer";
 import { Question, QuestionType } from "./interfaces/question";
+import { makeBlankQuestion } from "./objects";
 
 /**
  * Consumes an array of questions and returns a new array with only the questions
@@ -109,7 +110,19 @@ export function addNewQuestion(
     name: string,
     type: QuestionType,
 ): Question[] {
-    return [];
+    const newQ = makeBlankQuestion(id, name, type);
+    const questionsCopy = questions.map(
+        (question: Question): Question => ({
+            /* Copy the primitives */
+            ...question,
+            /* Shallow copy the options */
+            options: [...question.options],
+        }),
+    );
+    questionsCopy.push(newQ);
+    console.log("~~~~~~~HELLLO!!!!!~~~~~~~~~~");
+    console.log(questionsCopy);
+    return questionsCopy;
 }
 
 /***
