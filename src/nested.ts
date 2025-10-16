@@ -168,7 +168,6 @@ export function editOption(
     targetOptionIndex: number,
     newOption: string,
 ): Question[] {
-<<<<<<< HEAD
     const questionsCopy = questions.map(
         (question: Question): Question => ({
             /* Copy the primitives */
@@ -188,7 +187,4 @@ export function editOption(
         }
     }
     return questionsCopy;
-=======
-    return [];
->>>>>>> upstream/task-state
 }
