@@ -1,10 +1,17 @@
 import React from "react";
 import "./App.css";
+<<<<<<< HEAD
 import everest from "./assets/Ev.jpg";
 import { Button } from "react-bootstrap";
 import { Container } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
+=======
+import { ChangeType } from "./components/ChangeType";
+import { RevealAnswer } from "./components/RevealAnswer";
+import { TwoDice } from "./components/TwoDice";
+import { Counter } from "./components/Counter";
+>>>>>>> upstream/task-state
 
 function App(): React.JSX.Element {
     return (
@@ -12,6 +19,7 @@ function App(): React.JSX.Element {
             <header className="App-header">
                 UM COS420 with React Hooks and TypeScript
             </header>
+<<<<<<< HEAD
             <h1>Welcome to this COS520 Web Application</h1>
             <p>
                 Edit <code>src/App.tsx</code> and save. This page will
@@ -53,6 +61,16 @@ function App(): React.JSX.Element {
                     </Row>
                 </Container>
             </div>
+=======
+            <hr></hr>
+            <Counter></Counter>
+            <hr />
+            <RevealAnswer></RevealAnswer>
+            <hr />
+            <TwoDice></TwoDice>
+            <hr />
+            <ChangeType></ChangeType>
+>>>>>>> upstream/task-state
         </div>
     );
 }
