@@ -16,6 +16,7 @@ export function CheckAnswer({
 
     return (
         <div>
+            <h3>Check Answer</h3>
             <Form.Group controlId="formCheckAnswer">
                 <Form.Label>
                     What is the answer to life, the universe, and everything?
@@ -23,8 +24,6 @@ export function CheckAnswer({
                 <Form.Control value={answer} onChange={updateAnswer} />
             </Form.Group>
             <div>Result: {answer === expectedAnswer ? "✔️" : "❌"}</div>
-
-            <h3>Check Answer</h3>
         </div>
     );
 }

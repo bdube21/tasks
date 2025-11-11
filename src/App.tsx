@@ -19,10 +19,7 @@ function App(): React.JSX.Element {
             </header>
             <hr></hr>
             <DoubleHalf></DoubleHalf>
-<<<<<<< HEAD
-=======
             <hr></hr>
->>>>>>> fb02e33c746f70beab3834804d35ae987b6b97e8
             <CheckAnswer expectedAnswer="42"></CheckAnswer>
             <hr></hr>
             <EditMode></EditMode>
@@ -32,11 +29,7 @@ function App(): React.JSX.Element {
                 expectedAnswer="b"
             ></MultipleChoiceQuestion>
             <hr></hr>
-<<<<<<< HEAD
-            {<DoubleHalf></DoubleHalf>}
-=======
             <DoubleHalf></DoubleHalf>
->>>>>>> fb02e33c746f70beab3834804d35ae987b6b97e8
             <hr></hr>
             <ChooseTeam></ChooseTeam>
             <hr></hr>
