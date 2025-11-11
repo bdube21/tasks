@@ -19,6 +19,7 @@ function App(): React.JSX.Element {
             </header>
             <hr></hr>
             <DoubleHalf></DoubleHalf>
+            <hr></hr>
             <CheckAnswer expectedAnswer="42"></CheckAnswer>
             <hr></hr>
             <EditMode></EditMode>
