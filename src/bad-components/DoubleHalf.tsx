@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 
+/* Modified to pass the useState in props */
 function Doubler({
     value,
     setValue,
